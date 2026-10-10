@@ -24,8 +24,6 @@
 - [6. Tabla de Contratos e Interfaces Publicas](#6-tabla-de-contratos-e-interfaces-publicas)
 - [7. Decisiones de Diseno Arquitectonico (ADR)](#7-decisiones-de-diseno-arquitectonico-adr)
 - [8. Guia de Ejecucion Paso a Paso](#8-guia-de-ejecucion-paso-a-paso)
-  - [8.1 Windows PowerShell](#81-windows-powershell)
-  - [8.2 GNU/Linux y macOS Bash](#82-gnulinux-y-macos-bash)
 - [9. Evidencias de Ejecucion y Pruebas Reales](#9-evidencias-de-ejecucion-y-pruebas-reales)
 - [10. Pipeline de Integracion Continua (CI)](#10-pipeline-de-integracion-continua-ci)
 - [11. Analisis de Trade-offs y Conclusiones](#11-analisis-de-trade-offs-y-conclusiones)
@@ -352,8 +350,6 @@ Toda decision de diseno relevante se encuentra formalmente documentada en la car
 
 ## 8. Guia de Ejecucion Paso a Paso
 
-### 8.1 Windows PowerShell
-
 Para compilar, ejecutar las pruebas y generar los reportes de calidad en sistemas Windows utilizando PowerShell:
 
 ```powershell
@@ -373,30 +369,6 @@ mvn test -Dtest=CitaRepositoryTest
 mvn test -Dtest=CitaReminderServiceIntegrationTest
 
 # 6. Verificacion integral del ciclo de vida y reporte JaCoCo
-mvn clean verify
-```
-
-### 8.2 GNU/Linux y macOS Bash
-
-Para entornos basados en Unix, contenedores Docker o runners de integracion continua:
-
-```bash
-# 1. Posicionarse en la raiz del proyecto
-cd palacio-post1-u9
-
-# 2. Compilacion y preparacion del bytecode
-./mvnw clean compile # o 'mvn clean compile'
-
-# 3. Ejecucion aislada de pruebas unitarias
-mvn test -Dtest=CitaReminderServiceImplTest
-
-# 4. Ejecucion aislada de pruebas de persistencia
-mvn test -Dtest=CitaRepositoryTest
-
-# 5. Ejecucion de prueba extremo a extremo Spring Boot
-mvn test -Dtest=CitaReminderServiceIntegrationTest
-
-# 6. Ejecucion de todas las pruebas y generacion de empaquetado
 mvn clean verify
 ```
 
