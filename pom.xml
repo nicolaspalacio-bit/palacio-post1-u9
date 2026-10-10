@@ -14,7 +14,7 @@
 	<name>recordatorios-citas-service</name>
 	<description>Microservicio de recordatorios de citas medicas</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>21</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
