@@ -84,13 +84,13 @@ flowchart TD
     ServiceImpl --> ClockBean
     ServiceImpl --> ReminderChannel
     FactoryImpl --> ReminderChannel
-    ReminderChannel <|.. EmailChannel
-    ReminderChannel <|.. SmsChannel
+    EmailChannel -.->|implementa| ReminderChannel
+    SmsChannel -.->|implementa| ReminderChannel
     SmsChannel --> Gateway
-    Gateway <|.. TwilioGateway
+    TwilioGateway -.->|implementa| Gateway
     CitaRepo --> Cita
     Cita --> CanalEnum
-    CanalUrgenteConfig ..> SmsChannel
+    CanalUrgenteConfig -.->|configura| SmsChannel
 ```
 
 ### 2.2 Diagramas de Secuencia
